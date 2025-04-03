@@ -1,4 +1,5 @@
 vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
+vim.keymap.set("i", "<C-b>", vim.cmd.Ex)
 vim.keymap.set("i", "<C-s>", "<cmd>w<CR>")
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 vim.keymap.set("n", "<C-q>", "<cmd>wq!<CR>")
