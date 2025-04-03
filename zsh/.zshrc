@@ -42,6 +42,12 @@ alias dtree="tree -L 3 -a -d -I '.git' --charset X "
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user" 
 
 
+
+# Zoxide 
+eval "$(zoxide init zsh)"
+
+
+
 # Oh My Posh Theme
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh_themes/catppuccin_mocha.omp.json)"
 

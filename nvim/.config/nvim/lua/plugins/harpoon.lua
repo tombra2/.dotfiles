@@ -32,5 +32,11 @@ return {
 		vim.keymap.set("n", "<C-right>", function()
 			harpoon:list():next()
 		end)
+		vim.keymap.set("i", "<C-left>", function()
+			harpoon:list():prev()
+		end)
+		vim.keymap.set("i", "<C-right>", function()
+			harpoon:list():next()
+		end)
 	end,
 }
