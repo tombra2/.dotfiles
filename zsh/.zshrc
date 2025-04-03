@@ -24,6 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # FZF Keybindings (wenn nötig)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s '^f' '~/.config/script/tmux-sessionizer\n'
+bindkey -s '^n' '~/.config/script/tmux-notes\n'
 
 # Zsh History
 HISTFILE=~/.zsh_history
@@ -44,7 +45,7 @@ alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
 
 
 # Zoxide 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 
 
