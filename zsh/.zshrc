@@ -24,8 +24,13 @@ source $ZSH/oh-my-zsh.sh
 # FZF Keybindings (wenn nötig)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s '^f' '~/.config/script/tmux-sessionizer\n'
-bindkey -s '^n' '~/.config/script/tmux-notes\n'
-
+bindkey -s '^n' '~/.dotfiles/script/.config/script/tmux-notes\n'
+bindkey -s '^K' 'sesh_fzf_connect\n'
+sesh_fzf_connect() {
+  local session
+  session=$(sesh list | fzf)
+  [[ -n "$session" ]] && sesh connect "$session"
+}
 # Zsh History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

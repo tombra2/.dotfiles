@@ -4,7 +4,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>pf",
+			"<leader>ff",
 			function()
 				require("fzf-lua").files()
 			end,
@@ -17,13 +17,7 @@ return {
 			desc = "Find nvim config",
 		},
 		{
-			"<C-p>",
-			function()
-				require("fzf-lua").git_files()
-			end,
-		},
-		{
-			"<leader>ps",
+			"<leader>fs",
 			function()
 				require("fzf-lua").live_grep({ search = vim.fn.input("Grep > ") })
 			end,
@@ -32,6 +26,18 @@ return {
 			"<leader>fd",
 			function()
 				require("fzf-lua").files({ cwd = "~/.dotfiles" })
+			end,
+		},
+		{
+			"<leader><leader>",
+			function()
+				require("fzf-lua").buffers()
+			end,
+		},
+		{
+			"<leader>fb",
+			function()
+				require("fzf-lua").builtin()
 			end,
 		},
 	},
