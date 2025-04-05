@@ -32,8 +32,22 @@ sesh_fzf_connect() {
   [[ -n "$session" ]] && sesh connect "$session"
 }
 # Zsh History
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
+
+
+function server {
+  local SESSION="webserver_ssh"
+  local HOST="root@212.227.48.137"  # Ersetze diesen Wert mit deinen Zugangsdaten
+
+  if [[ -z "$TMUX" ]]; then
+    tmux new-session -A -s "$SESSION" "ssh $HOST"
+  else
+    tmux new-window -n "$(echo $HOST | cut -d'@' -f2)" "ssh $HOST"
+  fi
+}
+
+
+
+HISTFILE=~/.zsh_history HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 

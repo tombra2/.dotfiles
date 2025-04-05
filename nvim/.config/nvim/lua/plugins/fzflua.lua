@@ -8,37 +8,42 @@ return {
 			function()
 				require("fzf-lua").files()
 			end,
+			desc = "[F]ind [F]iles",
 		},
 		{
 			"<leader>fc",
 			function()
 				require("fzf-lua").files({ cwd = "~/.dotfiles/nvim/" })
 			end,
-			desc = "Find nvim config",
+			desc = "[F]ind [C]onfig (Neovim)",
 		},
 		{
 			"<leader>fs",
 			function()
 				require("fzf-lua").live_grep({ search = vim.fn.input("Grep > ") })
 			end,
+			desc = "[F]ile [S]earch",
 		},
 		{
 			"<leader>fd",
 			function()
 				require("fzf-lua").files({ cwd = "~/.dotfiles" })
 			end,
+			desc = "[F]ind [D]otfile",
 		},
 		{
 			"<leader><leader>",
 			function()
 				require("fzf-lua").buffers()
 			end,
+			desc = "Open Buffer",
 		},
 		{
 			"<leader>fb",
 			function()
 				require("fzf-lua").builtin()
 			end,
+			desc = "[F]ind [B]uiltin",
 		},
 	},
 }
