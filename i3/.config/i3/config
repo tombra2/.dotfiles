@@ -5,7 +5,7 @@ font pango:Meslo LGM Nerd Font 10
 
 # Start XDG autostart .desktop files
 exec --no-startup-id dex --autostart --environment i3
-
+exec_always --no-startup-id feh --bg-scale /home/thomas/wallpapers/catppuccin_mocha_lavender_wallpapers_for_arch_by_deviantarchuser_dhfnj1l-pre.jpg
 # Lock screen on suspend
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
@@ -24,6 +24,9 @@ exec --no-startup-id xrandr \
   --output DP-4 --mode 2560x1440 --rate 60 --pos 0x0 --primary \
   --output DVI-D-0 --mode 2560x1440 --rate 60 --pos 5120x0 \
   --output HDMI-0 --mode 2560x1440 --rate 60 --pos 2560x0
+
+exec --no-startup-id xrandr \
+    --output eDP-1 --scale 0.75x0.75\
 
 bindsym $mod+p exec --no-startup-id /home/thomas/.local/share/JetBrains/Toolbox/scripts/phpstorm
 bindsym $mod+i exec --no-startup-id /home/thomas/.local/share/JetBrains/Toolbox/scripts/idea
