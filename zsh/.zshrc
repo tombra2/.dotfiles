@@ -25,18 +25,21 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s '^f' '~/.config/script/tmux-sessionizer\n'
 bindkey -s '^n' '~/.dotfiles/script/.config/script/tmux-notes\n'
-bindkey -s '^K' 'sesh_fzf_connect\n'
-sesh_fzf_connect() {
-  local session
-  session=$(sesh list | fzf)
-  [[ -n "$session" ]] && sesh connect "$session"
-}
-# Zsh History
 
 
 function server {
   local SESSION="webserver_ssh"
   local HOST="root@212.227.48.137"  # Ersetze diesen Wert mit deinen Zugangsdaten
+
+  if [[ -z "$TMUX" ]]; then
+    tmux new-session -A -s "$SESSION" "ssh $HOST"
+  else
+    tmux new-window -n "$(echo $HOST | cut -d'@' -f2)" "ssh $HOST"
+  fi
+}
+function raspi {
+  local SESSION="raspi_ssh"
+  local HOST="thomas@raspi"  # Ersetze diesen Wert mit deinen Zugangsdaten
 
   if [[ -z "$TMUX" ]]; then
     tmux new-session -A -s "$SESSION" "ssh $HOST"
