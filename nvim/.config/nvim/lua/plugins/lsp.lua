@@ -116,7 +116,8 @@ return {
 			"shfmt",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
+		require("java").setup()
+		require("lspconfig").jdtls.setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = {},
 			automatic_installation = false,

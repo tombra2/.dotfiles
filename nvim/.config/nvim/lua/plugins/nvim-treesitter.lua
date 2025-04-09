@@ -21,6 +21,7 @@ return {
 				"markdown",
 				"cpp",
 				"arduino",
+				"markdown_inline",
 			},
 			sync_install = true,
 			highlight = { enable = true },
