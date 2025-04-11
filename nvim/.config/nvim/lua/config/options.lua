@@ -8,6 +8,7 @@ vim.opt.list = true -- Nicht druckbare Zeichen anzeigen
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } -- Darstellung nicht druckbarer Zeichen
 vim.opt.signcolumn = "yes" -- Zeichen-Spalte immer anzeigen
 vim.opt.showmode = false -- Modus nicht in der Statuszeile anzeigen (da bereits vorhanden)
+vim.opt.numberwidth = 2
 
 -- Suchverhalten
 vim.opt.ignorecase = true -- Suche ist standardmäßig nicht zwischen Groß- und Kleinschreibung unterscheidend
