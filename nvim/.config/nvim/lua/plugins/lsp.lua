@@ -129,8 +129,13 @@ return {
 		local original_cabailities = vim.lsp.protocol.make_client_capabilities()
 		local capabilities = require("blink.cmp").get_lsp_capabilities(original_cabailities)
 		local servers = {
-			emmet_language_server = {},
-			html = {},
+			emmet_language_server = {
+
+				filetypes = { "html", "css", "php" },
+			},
+			html = {
+				filetypes = { "html", "php" },
+			},
 			phpactor = {},
 			jdtls = {},
 			bashls = {},

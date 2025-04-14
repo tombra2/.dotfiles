@@ -65,6 +65,14 @@ alias dtree="tree -L 3 -a -d -I '.git' --charset X "
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user" 
 
 
+alias v="nvim"
+alias g="git"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gs="git status"
+alias gl="git log --oneline --graph --decorate --all"
+alias python="python3"
 
 # Zoxide 
 eval "$(zoxide init --cmd cd zsh)"
