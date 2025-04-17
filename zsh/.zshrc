@@ -4,7 +4,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
 export PATH="$PATH:/home/thomas/.local/share/JetBrains/Toolbox/scripts"
-
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 plugins=(
   git
   sudo
@@ -24,7 +24,8 @@ source $ZSH/oh-my-zsh.sh
 # FZF Keybindings (wenn nötig)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s '^f' '~/.config/script/tmux-sessionizer\n'
-bindkey -s '^n' '~/.dotfiles/script/.config/script/tmux-notes\n'
+bindkey -s '^n' 'nvim $(fzf)\n'
+
 
 
 function server {

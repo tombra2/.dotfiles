@@ -5,7 +5,6 @@ vim.opt.termguicolors = true
 vim.opt.number = true -- Zeilennummern anzeigen
 vim.opt.relativenumber = true -- Relative Zeilennummern aktivieren
 vim.opt.list = true -- Nicht druckbare Zeichen anzeigen
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } -- Darstellung nicht druckbarer Zeichen
 vim.opt.signcolumn = "yes" -- Zeichen-Spalte immer anzeigen
 vim.opt.showmode = false -- Modus nicht in der Statuszeile anzeigen (da bereits vorhanden)
 vim.opt.numberwidth = 2
@@ -13,7 +12,7 @@ vim.opt.numberwidth = 2
 -- Suchverhalten
 vim.opt.ignorecase = true -- Suche ist standardmäßig nicht zwischen Groß- und Kleinschreibung unterscheidend
 vim.opt.smartcase = true -- Falls ein Großbuchstabe in der Suche, wird die Suche groß-/kleinschreibungssensitiv
-vim.opt.hlsearch = false -- Suchbegriffe nicht dauerhaft hervorheben
+vim.opt.hlsearch = true -- Suchbegriffe nicht dauerhaft hervorheben
 vim.opt.incsearch = true -- Inkrementelle Suche aktivieren
 
 -- Einrückungen und Tabulatoren

@@ -136,7 +136,8 @@ return {
 			html = {
 				filetypes = { "html", "php" },
 			},
-			phpactor = {},
+			--phpactor = {},
+			intelephense = {},
 			jdtls = {},
 			bashls = {},
 			marksman = {},
