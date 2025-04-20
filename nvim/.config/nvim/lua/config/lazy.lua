@@ -21,7 +21,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "catppuccin-frappe" } },
+	install = {},
 	checker = { enabled = true },
 })
 require("config.keymaps")

@@ -5,7 +5,6 @@ font pango:Meslo LGM Nerd Font 11
 
 # Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id feh --bg-scale /home/thomas/wallpapers/catppuccin_mocha_lavender_wallpapers_for_arch_by_deviantarchuser_dhfnj1l-pre.jpg
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.config/script/startup.sh
@@ -14,8 +13,9 @@ exec --no-startup-id xrandr \
          --output HDMI-0 --mode 2560x1440 --rate 60 --pos 0x0 --primary \
 
 exec --no-startup-id xrandr \
-             --output eDP-1 --scale 0.75x0.75\
+             --output eDP-1 --scale 0.65x0.65\
 
+             exec_always --no-startup-id feh --bg-scale /home/thomas/wallpapers/catppuccin_mocha_lavender_wallpapers_for_arch_by_deviantarchuser_dhfnj1l-pre.jpg
 # Audio
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status

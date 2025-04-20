@@ -14,6 +14,7 @@ return {
 				"html",
 				"css",
 				"sql",
+				"yaml",
 				"python",
 				"php",
 				"java",
