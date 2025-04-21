@@ -138,7 +138,7 @@ return {
 			},
 			--phpactor = {},
 			intelephense = {},
-			jdtls = {},
+			--jdtls = {},
 			bashls = {},
 			marksman = {},
 			lua_ls = {
@@ -158,6 +158,8 @@ return {
 			"php-cs-fixer",
 			"shfmt",
 		})
+		require("java").setup()
+		require("lspconfig").jdtls.setup({})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 		require("mason-lspconfig").setup({
 			ensure_installed = {},

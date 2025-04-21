@@ -64,7 +64,7 @@ alias lg="lazygit"
 alias tree="tree -L 3 -a -I '.git' --charset X "
 alias dtree="tree -L 3 -a -d -I '.git' --charset X "
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user" 
-
+alias gau='~/.dotfiles/script/.config/script/git-auto.sh'
 
 alias v="nvim"
 alias g="git"
