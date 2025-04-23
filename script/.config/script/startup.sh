@@ -22,7 +22,7 @@ i3-msg 'workspace 5; exec --no-startup-id discord'
 sleep 2.5
 i3-msg 'workspace 6; exec --no-startup-id 1password'
 sleep 2.5
-i3-msg 'workspace 7; exec -- no-startup-id teams'
+i3-msg 'workspace 7; exec --no-startup-id com.github.IsmaelMartinez.teams_for_linux'
 sleep 2.5
 i3-msg 'workspace 8; exec --no-startup-id zapzap'
 sleep 2.5
