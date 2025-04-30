@@ -40,7 +40,7 @@ function server {
 }
 function raspi {
   local SESSION="raspi_ssh"
-  local HOST="thomas@raspi"  # Ersetze diesen Wert mit deinen Zugangsdaten
+  local HOST="ssh thomas@192.168.0.9"  # Ersetze diesen Wert mit deinen Zugangsdaten
 
   if [[ -z "$TMUX" ]]; then
     tmux new-session -A -s "$SESSION" "ssh $HOST"

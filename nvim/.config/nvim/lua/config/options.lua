@@ -10,9 +10,7 @@ vim.opt.showmode = false -- Modus nicht in der Statuszeile anzeigen (da bereits 
 vim.opt.numberwidth = 2
 
 -- Suchverhalten
-vim.opt.ignorecase = true -- Suche ist standardmäßig nicht zwischen Groß- und Kleinschreibung unterscheidend
-vim.opt.smartcase = true -- Falls ein Großbuchstabe in der Suche, wird die Suche groß-/kleinschreibungssensitiv
-vim.opt.hlsearch = true -- Suchbegriffe nicht dauerhaft hervorheben
+vim.opt.hlsearch = false -- Suchbegriffe nicht dauerhaft hervorheben
 vim.opt.incsearch = true -- Inkrementelle Suche aktivieren
 
 -- Einrückungen und Tabulatoren
@@ -33,14 +31,5 @@ vim.opt.splitbelow = true -- Neue horizontale Splits unten öffnen
 vim.opt.mouse = "a" -- Maussteuerung überall aktivieren
 vim.opt.undofile = true -- Änderungen in einer Undo-Datei speichern
 vim.opt.scrolloff = 8 -- Mindestens 10 Zeilen über/unter dem Cursor anzeigen
-
--- Nach kopieren wird ein kurzes Highlighten des Textes angezeigt
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	desc = "Highlight yank",
-})
 vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = false
