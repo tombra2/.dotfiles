@@ -97,3 +97,17 @@ eval "$(pyenv init - bash)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+ read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
+
+  mkdir "$PROJECT" && cd "$PROJECT" || return 1
+
+  ddev config --project-type=symfony --docroot=public
+  ddev start
+  ddev composer create symfony/skeleton
+
+  echo "x" | ddev composer require webapp
+
+  ddev launch
+}
+
