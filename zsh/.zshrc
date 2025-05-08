@@ -64,16 +64,22 @@ alias tree="tree -L 3 -a -I '.git' --charset X "
 alias dtree="tree -L 3 -a -d -I '.git' --charset X "
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user" 
 alias gau='~/.dotfiles/script/.config/script/git-auto.sh'
-
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias v="nvim"
 alias g="git"
-alias ga="git add"
+alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push"
 alias gs="git status"
 alias gl="git log --oneline --graph --decorate --all"
 alias python="python3"
+# Wechsle in ein per fzf ausgewähltes Verzeichnis
+alias fd='cd "$(find . -type d | fzf)"'
 
+# Durchsuche deinen Befehlshistorie
+alias fh='history | fzf'
 # Zoxide 
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -97,7 +103,8 @@ eval "$(pyenv init - bash)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
- read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
+function nsp(){
+read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
 
   mkdir "$PROJECT" && cd "$PROJECT" || return 1
 
