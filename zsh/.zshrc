@@ -21,8 +21,10 @@ plugins=(
   dirhistory
   tmux
   zsh-autosuggestions
-  zsh-syntax-highlighting  # immer am Ende
-)
+  zsh-syntax-highlighting
+  fast-syntax-highlighting 
+  zsh-autocomplete)
+
 ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
@@ -132,18 +134,4 @@ eval "$(pyenv init - bash)"
 # Envman
 # ---------------------------
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# ---------------------------
-# Symfony Projekt Wizard
-# ---------------------------
-nsp() {
-  read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
-  mkdir "$PROJECT" && cd "$PROJECT" || return 1
-
-  ddev config --project-type=symfony --docroot=public
-  ddev start
-  ddev composer create symfony/skeleton
-  echo "x" | ddev composer require webapp
-  ddev launch
-}
 
