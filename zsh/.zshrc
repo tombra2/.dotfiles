@@ -146,6 +146,9 @@ eval "$(pyenv init - bash)"
 # ---------------------------
 nsp() {
   read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
+function nso {
+ read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
+
   mkdir "$PROJECT" && cd "$PROJECT" || return 1
 
   ddev config --project-type=symfony --docroot=public
