@@ -6,7 +6,7 @@ export SHELL="/usr/bin/zsh"
 export EDITOR=nvim
 export PATH="/usr/bin:/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.config/script:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
-
+# ---------------------------
 # Oh My Zsh Setup
 # ---------------------------
 export ZSH="$HOME/.oh-my-zsh"
@@ -20,11 +20,9 @@ plugins=(
   copybuffer
   dirhistory
   tmux
-  symfony-complete
   zsh-autosuggestions
   zsh-syntax-highlighting  # immer am Ende
 )
-
 ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
@@ -99,20 +97,13 @@ alias gl="git log --oneline --graph --decorate --all"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias v="nvim"
+
 # Tools
 alias python="python3"
 alias gau='~/.dotfiles/script/.config/script/git-auto.sh'
 alias fd='cd "$(find . -type d | fzf)"'
 alias fh='history | fzf'
-
-compdef _symfony_complete symfony
-compdef _symfony_complete composer
-compdef _symfony_complete console
-compdef _symfony_complete phpstan
-compdef _symfony_complete php-cs-fixer
-
-
-
 
 # ---------------------------
 # Zoxide
@@ -147,9 +138,6 @@ eval "$(pyenv init - bash)"
 # ---------------------------
 nsp() {
   read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
-function nso {
- read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
-
   mkdir "$PROJECT" && cd "$PROJECT" || return 1
 
   ddev config --project-type=symfony --docroot=public
@@ -158,3 +146,4 @@ function nso {
   echo "x" | ddev composer require webapp
   ddev launch
 }
+
