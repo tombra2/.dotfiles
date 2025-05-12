@@ -113,7 +113,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # ---------------------------
 # Oh My Posh
 # ---------------------------
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh_themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh_themes/robbyrussell.omp.json)"
 
 # ---------------------------
 # SDKMAN
