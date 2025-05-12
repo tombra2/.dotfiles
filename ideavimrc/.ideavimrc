@@ -17,7 +17,6 @@ nnoremap p P
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
-map <leader>cg <Action>(Generate)
 
 
 
