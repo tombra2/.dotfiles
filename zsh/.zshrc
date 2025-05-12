@@ -96,7 +96,7 @@ eval "$(pyenv init - bash)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
+function nso {
  read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
 
   mkdir "$PROJECT" && cd "$PROJECT" || return 1

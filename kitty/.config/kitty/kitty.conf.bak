@@ -25,6 +25,6 @@ hide_window_decorations yes
 disable_ligatures never
 
 # BEGIN_KITTY_THEME
-# Atelier Forest Dark
+# VSCode_Dark
 include current-theme.conf
 # END_KITTY_THEME
