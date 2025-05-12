@@ -2,7 +2,6 @@ export SHELL="/usr/bin/zsh"
 export PATH="/usr/bin:/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.config/script"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
-
 export PATH="$PATH:/home/thomas/.local/share/JetBrains/Toolbox/scripts"
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 plugins=(
@@ -24,6 +23,10 @@ ZSH_TMUX_AUTOSTART=true
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s '^f' '~/.config/script/tmux-sessionizer\n'
 bindkey -s '^n' 'nvim $(fzf)\n'
+# # Starte tmux automatisch, wenn noch keine tmux-Session aktiv ist
+if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
 
 
 

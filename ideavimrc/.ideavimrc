@@ -21,8 +21,8 @@ map <leader>cg <Action>(Generate)
 
 
 
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
 
 
 vmap J :m '>+1<CR>gv=gv
