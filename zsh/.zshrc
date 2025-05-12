@@ -17,6 +17,7 @@ plugins=(
   dirhistory
   tmux
 )
+
 ZSH_TMUX_AUTOSTART=true
 
 # FZF Keybindings (wenn nötig)
@@ -89,7 +90,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 # Oh My Posh Theme
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh_themes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh_themes/robbyrussell.omp.json)"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -105,17 +106,4 @@ eval "$(pyenv init - bash)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-function nso {
- read "PROJECT?Wie soll dein Symfony-Projekt heißen? "
-
-  mkdir "$PROJECT" && cd "$PROJECT" || return 1
-
-  ddev config --project-type=symfony --docroot=public
-  ddev start
-  ddev composer create symfony/skeleton
-
-  echo "x" | ddev composer require webapp
-
-  ddev launch
-}
 
